@@ -1,0 +1,38 @@
+body {
+  background: pink;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: hotpink;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:first-child {
+  background: hotpink;
+  color: white;
+}
+
+#noBtn {
+  background: lightgray;
+}

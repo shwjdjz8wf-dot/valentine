@@ -39,7 +39,7 @@ function showPasswordPage() {
   font-size:2rem;
   margin-bottom:30px;
 ">
-  anniversary
+  Anniversary
 </h2>
     <input 
       id="passwordInput"

@@ -34,14 +34,13 @@ function yes() {
 function showPasswordPage() {
   document.body.innerHTML = `
     <h2 style="
-      color:white;
-      text-align:center;
-      font-size:2rem;
-      margin-bottom:20px;
-    ">
-      anniversary
-    </h2>
-
+  color:white;
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:30px;
+">
+  anniversary
+</h2>
     <input 
       id="passwordInput"
       type="password"

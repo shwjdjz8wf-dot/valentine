@@ -16,57 +16,75 @@ function yes() {
       I miss you so much baby.
     </h1>
 
-    <button onclick="showPasswordPage()" style="
-  margin-top:30px;
-  padding:14px 22px;
-  font-size:1.2rem;
-  border:none;
-  border-radius:12px;
-  background:white;
-  color:hotpink;
-  cursor:pointer;
+  <div style="
+  position:fixed;
+  bottom:30px;
+  width:100%;
+  display:flex;
+  justify-content:center;
 ">
-  Reveal Secret 💌
-</button>
+  <button onclick="showPasswordPage()" style="
+    padding:14px 22px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:12px;
+    background:white;
+    color:hotpink;
+    cursor:pointer;
+  ">
+    Reveal Secret 💌
+  </button>
+</div>
   `;
 }
 
 function showPasswordPage() {
   document.body.innerHTML = `
-    <h2 style="
-  color:white;
-  text-align:center;
-  font-size:2rem;
-  margin-bottom:30px;
-">
-  Anniversary
-</h2>
-    <input 
-      id="passwordInput"
-      type="password"
-      placeholder="Enter password"
-      style="
-        padding:12px;
-        font-size:1rem;
-        border-radius:8px;
-        border:none;
-        text-align:center;
-      "
-    />
-
-    <br><br>
-
-    <button onclick="checkPassword()" style="
-      padding:12px 20px;
-      font-size:1rem;
-      border:none;
-      border-radius:10px;
-      background:white;
-      color:hotpink;
-      cursor:pointer;
+    <div style="
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      box-sizing:border-box;
     ">
-      Unlock 🔓
-    </button>
+
+      <h2 style="
+        color:white;
+        font-size:2rem;
+        margin-bottom:40px;
+      ">
+        anniversary
+      </h2>
+
+      <input 
+        id="passwordInput"
+        type="password"
+        placeholder="Enter password"
+        style="
+          padding:12px;
+          font-size:1rem;
+          border-radius:8px;
+          border:none;
+          text-align:center;
+          margin-bottom:20px;
+        "
+      />
+
+      <button onclick="checkPassword()" style="
+        padding:12px 20px;
+        font-size:1rem;
+        border:none;
+        border-radius:10px;
+        background:white;
+        color:hotpink;
+        cursor:pointer;
+      ">
+        Unlock 🔓
+      </button>
+
+    </div>
   `;
 }
 function checkPassword() {

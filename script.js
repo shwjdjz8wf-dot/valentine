@@ -11,7 +11,7 @@ function yes() {
     ">
       YAYYY I love you sooooo MUCHHH ❤️❤️❤️❤️❤️<br><br>
       I’m sorry I can’t be there with you <br>
-      Butt were gonna go for a nice dinner togetherrrrr <br>
+      Buttttt were gonna go for a nice dinner togetherrrrr <br>
       I can’t wait to be with you foreverrr.<br><br>
       I miss you so much baby.
     </h1>

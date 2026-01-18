@@ -17,17 +17,17 @@ function yes() {
     </h1>
 
     <button onclick="showPasswordPage()" style="
-      margin-top:30px;
-      padding:14px 22px;
-      font-size:1.2rem;
-      border:none;
-      border-radius:12px;
-      background:white;
-      color:hotpink;
-      cursor:pointer;
-    ">
-      Reveal Secret 💌
-    </button>
+  margin-top:30px;
+  padding:14px 22px;
+  font-size:1.2rem;
+  border:none;
+  border-radius:12px;
+  background:white;
+  color:hotpink;
+  cursor:pointer;
+">
+  Reveal Secret 💌
+</button>
   `;
 }
 

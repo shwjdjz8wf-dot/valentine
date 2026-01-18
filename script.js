@@ -1,7 +1,128 @@
 function yes() {
-  document.body.innerHTML =
-    "<h1 style='color:white; text-align:center;'>YAYYY  I love you sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo MUCHHH.  Im sorrry i cant be there with uuuuu but were gonna out for an amazing dinner together when im backkk. I cant wait to be with you foreverrr. I miss u so much baby. ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙</h1>";
+  document.body.innerHTML = `
+    <h1 style="
+      color:white;
+      text-align:center;
+      font-size:clamp(1.5rem, 6vw, 3rem);
+      padding:20px;
+      max-width:90%;
+      margin:auto;
+      line-height:1.4;
+    ">
+      YAYYY I love you sooooo MUCHHH ❤️❤️❤️❤️❤️<br><br>
+      I’m sorry I can’t be there with you <br>
+      Butt were gonna go for a nice dinner togetherrrrr <br>
+      I can’t wait to be with you foreverrr.<br><br>
+      I miss you so much baby.
+    </h1>
+
+    <button onclick="showPasswordPage()" style="
+      margin-top:30px;
+      padding:14px 22px;
+      font-size:1.2rem;
+      border:none;
+      border-radius:12px;
+      background:white;
+      color:hotpink;
+      cursor:pointer;
+    ">
+      Reveal Secret 💌
+    </button>
+  `;
 }
+
+function showPasswordPage() {
+  document.body.innerHTML = `
+    <h2 style="
+      color:white;
+      text-align:center;
+      font-size:2rem;
+      margin-bottom:20px;
+    ">
+      anniversary
+    </h2>
+
+    <input 
+      id="passwordInput"
+      type="password"
+      placeholder="Enter password"
+      style="
+        padding:12px;
+        font-size:1rem;
+        border-radius:8px;
+        border:none;
+        text-align:center;
+      "
+    />
+
+    <br><br>
+
+    <button onclick="checkPassword()" style="
+      padding:12px 20px;
+      font-size:1rem;
+      border:none;
+      border-radius:10px;
+      background:white;
+      color:hotpink;
+      cursor:pointer;
+    ">
+      Unlock 🔓
+    </button>
+  `;
+}
+function checkPassword() {
+  const input = document.getElementById("passwordInput");
+  const password = input.value;
+
+  const correctPassword = "07092025"; // <-- CHANGE DATE HERE
+
+  if (password === correctPassword) {
+    showSecretMessage();
+  } else {
+    shakeInput(input);
+  }
+}
+
+function shakeInput(element) {
+  element.style.animation = "shake 0.4s";
+  element.style.border = "2px solid red";
+
+  setTimeout(() => {
+    element.style.animation = "";
+    element.style.border = "none";
+  }, 400);
+}
+
+function showSecretMessage() {
+  document.body.innerHTML = `
+    <h1 style="
+      color:white;
+      text-align:center;
+      font-size:clamp(1.5rem, 6vw, 3rem);
+      padding:20px;
+      max-width:90%;
+      margin:auto;
+      line-height:1.4;
+    ">
+       SECRET MESSAGE <br><br>
+      YAYY U FOUND ITT<br><br>
+      Diti i dont know where to start.<br>
+      You make me the happiest person ever.<br>
+      I love spending time with u, i love all our silly jokes<br>
+      I love u so much (Even when u bully me)<br><br>
+      Thank you for so many things<br>
+      Thank u for making me feel better<br>
+      Thank u for for being there for me<br>
+      Thank u for helping me a better person<br>
+      Thank u for being u<br>
+      Thank u for everything. <br><br>
+      I cant imagine life without you<br>
+      Your so perfect and pretty and one day ur gonna admit it<br>
+      I love u so much diti.
+    </h1>
+  `;
+}
+
 
 const noBtn = document.getElementById("noBtn");
 let moveCount = 0;

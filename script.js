@@ -86,6 +86,7 @@ function checkPassword() {
 function shakeInput(element) {
   element.style.animation = "shake 0.4s";
   element.style.border = "2px solid red";
+  element.value = "";
 
   setTimeout(() => {
     element.style.animation = "";

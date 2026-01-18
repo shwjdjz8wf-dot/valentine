@@ -136,7 +136,9 @@ function showSecretMessage() {
       Thank u for everything. <br><br>
       I cant imagine life without you<br>
       Your so perfect and pretty and one day ur gonna admit it<br>
-      I love u so much diti.
+      I love u so much diti.<br>
+      ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️<br>
+      
     </h1>
   `;
 }

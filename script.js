@@ -4,7 +4,7 @@ function yes() {
 }
 
 const noBtn = document.getElementById("noBtn");
-let moveCount = 0; // count how many times it moves
+let moveCount = 0;
 
 noBtn.addEventListener("mouseover", () => {
   moveCount++;
@@ -16,18 +16,52 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
 
-  // After 3 moves, show warning
+  // Show popup after 3 moves
   if (moveCount === 3) {
-    showWarning();
+    showPopup();
   }
 });
 
-function showWarning() {
-  const warning = document.createElement("p");
-  warning.innerText = " Nice try Diti it's not gonnaaa to work...😉";
-  warning.style.color = "hotpink";
-  warning.style.fontSize = "20px";
-  warning.style.marginTop = "20px";
+function showPopup() {
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.background = "rgba(0,0,0,0.5)";
+  overlay.style.display = "flex";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignItems = "center";
+  overlay.style.zIndex = "1000";
 
-  document.querySelector(".card").appendChild(warning);
+  const popup = document.createElement("div");
+  popup.style.background = "white";
+  popup.style.padding = "25px";
+  popup.style.borderRadius = "15px";
+  popup.style.textAlign = "center";
+  popup.style.boxShadow = "0 10px 25px rgba(0,0,0,0.3)";
+
+  popup.innerHTML = `
+    <h2 style="color:hotpink;">⚠️ Warning</h2>
+    <p style="font-size:18px;">It's not going to work Ditiiiiii 😏</p>
+    <button onclick="closePopup()" style="
+      margin-top:15px;
+      padding:8px 16px;
+      border:none;
+      border-radius:8px;
+      background:hotpink;
+      color:white;
+      font-size:16px;
+      cursor:pointer;">
+      Okay 💖
+    </button>
+  `;
+
+  overlay.appendChild(popup);
+  document.body.appendChild(overlay);
+
+  window.closePopup = function () {
+    document.body.removeChild(overlay);
+  };
 }

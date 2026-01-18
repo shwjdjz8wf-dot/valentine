@@ -1,6 +1,6 @@
 function yes() {
   document.body.innerHTML =
-    "<h1 style='color:white; text-align:center;'>YAYYY  I love you sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo MUCHHH.  Im sorrry i cant be there with uuuuu but were gonna out for an amazing dinner together when im backkk. I cant wait to be with you foreverrr. I miss u so much baby.</h1>";
+    "<h1 style='color:white; text-align:center;'>YAYYY  I love you sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo MUCHHH.  Im sorrry i cant be there with uuuuu but were gonna out for an amazing dinner together when im backkk. I cant wait to be with you foreverrr. I miss u so much baby. ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙😙</h1>";
 }
 
 const noBtn = document.getElementById("noBtn");

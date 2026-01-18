@@ -54,7 +54,7 @@ function showPopup() {
       color:white;
       font-size:16px;
       cursor:pointer;">
-      Okay 💖
+      fine......
     </button>
   `;
 

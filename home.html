@@ -59,7 +59,7 @@
   <div class="container">
     <h1>DITI & LEON</h1>
 
-<p id="countdown-label">Valentine’s Day Countdown 💘</p>
+<p id="countdown-label">Valentine’s Day Countdown </p>
 
 <div id="countdown">Loading countdown...</div>
 
@@ -98,7 +98,7 @@
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerHTML =
-      `${days} days ${hours} hrs ${minutes} mins ${seconds} secs 💖`;
+      `${days} days ${hours} hrs ${minutes} mins ${seconds} secs `;
   }
 
   // ---- TIME-BASED GREETING ----
@@ -106,11 +106,11 @@
   let greeting = "";
 
   if (hour >= 5 && hour < 12) {
-    greeting = "Good morning my love ☀️";
+    greeting = "Good morning babyyy ☀️";
   } else if (hour >= 12 && hour < 18) {
     greeting = "Hope your day is going well ❤️";
   } else {
-    greeting = "Good night my heart 🌙";
+    greeting = "Good night my love 🌙";
   }
 
   document.getElementById("timeGreeting").textContent = greeting;

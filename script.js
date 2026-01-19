@@ -1,18 +1,19 @@
 function yes() {
   document.body.innerHTML = `
     <div id="countdown" style="
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      padding:12px;
-      text-align:center;
-      font-size:1rem;
-      background:rgba(255, 105, 180, 0.25);
-      color:white;
-      z-index:1000;
-      backdrop-filter: blur(6px);
-    ">
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:18px 12px;
+  text-align:center;
+  font-size:clamp(1.1rem, 4vw, 1.6rem);
+  font-weight:600;
+  background:rgba(255, 105, 180, 0.35);
+  color:white;
+  z-index:1000;
+  backdrop-filter: blur(8px);
+">
       💘 Countdown to Valentine’s Day 💘
     </div>
 

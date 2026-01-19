@@ -49,14 +49,18 @@ button:first-child {
 
 
 #countdown-label {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
   opacity: 0.95;
 }
-
 #timeGreeting {
   margin-top: 18px;
   font-size: 1.2rem;
   opacity: 0.9;
 }
+
+
+
+

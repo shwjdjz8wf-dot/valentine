@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="align-items:flex-start; padding:20px;">
+
+  <h1>Our Anniversaries 💖</h1>
+
+  <div class="card">
+    <button onclick="toggle(this)">📅 7 September 2025</button>
+    <p style="display:none;">
+      This was the day everything changed.  
+      I knew I wanted you forever ❤️
+    </p>
+  </div>
+
+  <div class="card">
+    <button onclick="toggle(this)">📅 7 October 2025</button>
+    <p style="display:none;">
+      Another month with you.  
+      I love you more every day.
+    </p>
+  </div>
+
+  <script>
+    function toggle(btn) {
+      const msg = btn.nextElementSibling;
+      msg.style.display = msg.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

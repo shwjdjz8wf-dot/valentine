@@ -3,32 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Memories ❤️</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Our Anniversary 💕</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 3.5rem);
+      margin: 30px 0 40px;
+      letter-spacing: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 0 20px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .card button {
+      padding: 12px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 14px;
+      background: white;
+      color: hotpink;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 15px;
+      display: none;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* 📱 Mobile: 1 per row */
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body style="align-items:flex-start; padding:20px;">
+<body>
 
-  <h1>Our Anniversaries 💖</h1>
+  <h1>Our Anniversary 💕</h1>
 
-  <div class="card">
-    <button onclick="toggle(this)">📅 7 September 2025</button>
-    <p style="display:none;">
-      This was the day everything changed.  
-      I knew I wanted you forever ❤️
-    </p>
-  </div>
+  <div class="grid">
 
-  <div class="card">
-    <button onclick="toggle(this)">📅 7 October 2025</button>
-    <p style="display:none;">
-      Another month with you.  
-      I love you more every day.
-    </p>
+    <div class="card">
+      <button onclick="toggleMessage('m1')">💌 12 Jan 2024</button>
+      <div class="message" id="m1">
+        I still remember how happy I felt talking to you that day.
+      </div>
+    </div>
+
+    <div class="card">
+      <button onclick="toggleMessage('m2')">💌 14 Feb 2024</button>
+      <div class="message" id="m2">
+        Even though we weren’t together, my heart was completely yours.
+      </div>
+    </div>
+
+    <div class="card">
+      <button onclick="toggleMessage('m3')">💌 10 Mar 2024</button>
+      <div class="message" id="m3">
+        Every day with you feels like a blessing I don’t deserve.
+      </div>
+    </div>
+
+    <div class="card">
+      <button onclick="toggleMessage('m4')">💌 5 Jun 2024</button>
+      <div class="message" id="m4">
+        Thank you for always choosing me, even when it’s hard.
+      </div>
+    </div>
+
   </div>
 
   <script>
-    function toggle(btn) {
-      const msg = btn.nextElementSibling;
+    function toggleMessage(id) {
+      const msg = document.getElementById(id);
       msg.style.display = msg.style.display === "block" ? "none" : "block";
     }
   </script>

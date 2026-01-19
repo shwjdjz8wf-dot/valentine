@@ -80,27 +80,38 @@
     const valentinesDate = new Date("February 14, 2026 00:00:00").getTime();
 
     function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = valentinesDate - now;
+  const now = new Date();
+  const distance = valentinesDate - now.getTime();
 
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML =
-          "❤️ Happy Valentine’s Day ❤️";
-        return;
-      }
+  // ---- COUNTDOWN ----
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML =
+      "❤️ Happy Valentine’s Day ❤️";
+  } else {
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("countdown").innerHTML =
+      `${days} days ${hours} hrs ${minutes} mins ${seconds} secs 💖`;
+  }
 
-      document.getElementById("countdown").innerHTML =
-        `${days} days ${hours} hrs ${minutes} mins ${seconds} secs 💖`;
-    }
+  // ---- TIME-BASED GREETING ----
+  const hour = now.getHours();
+  let greeting = "";
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  if (hour >= 5 && hour < 12) {
+    greeting = "Good morning my love ☀️";
+  } else if (hour >= 12 && hour < 18) {
+    greeting = "Hope your day is going well ❤️";
+  } else {
+    greeting = "Good night my heart 🌙";
+  }
 
-</body>
-</html>
+  document.getElementById("timeGreeting").textContent = greeting;
+}

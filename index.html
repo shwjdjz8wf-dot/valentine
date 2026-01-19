@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h1>Diti only</h1>
+
+    <input
+      id="sitePassword"
+      type="password"
+      placeholder="Enter password"
+      style="
+        padding:12px;
+        font-size:1rem;
+        border-radius:8px;
+        border:none;
+        margin-top:15px;
+        text-align:center;
+      "
+    />
+
+    <br>
+
+    <button onclick="unlockSite()">Unlock 🔒</button>
+  </div>
+
+  <script>
+    function unlockSite() {
+      const input = document.getElementById("sitePassword").value;
+      const correctPassword = "300925"; 
+
+      if (input === correctPassword) {
+        location.href = "home.html";
+      } else {
+        alert("Wrong password ");
+      }
+    }
+  </script>
+
+</body>
+</html>

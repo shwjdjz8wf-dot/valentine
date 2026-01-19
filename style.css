@@ -45,3 +45,18 @@ button:first-child {
   75%  { transform: translateX(-5px); }
   100% { transform: translateX(0); }
 }
+
+
+
+#countdown-label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+#timeGreeting {
+  margin-top: 18px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}

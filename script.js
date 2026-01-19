@@ -166,24 +166,23 @@ function showSecretMessage() {
 const noBtn = document.getElementById("noBtn");
 let moveCount = 0;
 
-noBtn.addEventListener("mouseover", () => {
-  moveCount++;
+if (noBtn) {
+  noBtn.addEventListener("mouseover", () => {
+    moveCount++;
 
-  // Move the button
-  const x = Math.random() * (window.innerWidth - 120);
-  const y = Math.random() * (window.innerHeight - 60);
-  noBtn.style.position = "absolute";
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 
-  // Show popup after 3 moves
-  if (moveCount === 3) {
-    showPopup();
-  } else if (moveCount ===4) {
+    if (moveCount === 3) {
+      showPopup();
+    } else if (moveCount === 4) {
       showPopupreally();
-
-  }
-});
+    }
+  });
+}
 
 function showPopup() {
   const overlay = document.createElement("div");

@@ -1,10 +1,26 @@
 function yes() {
   document.body.innerHTML = `
+    <div id="countdown" style="
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:12px;
+      text-align:center;
+      font-size:1rem;
+      background:rgba(255, 105, 180, 0.25);
+      color:white;
+      z-index:1000;
+      backdrop-filter: blur(6px);
+    ">
+      💘 Countdown to Valentine’s Day 💘
+    </div>
+
     <h1 style="
       color:white;
       text-align:center;
       font-size:clamp(1.5rem, 6vw, 3rem);
-      padding:20px;
+      padding:80px 20px 20px;
       max-width:90%;
       margin:auto;
       line-height:1.4;
@@ -15,16 +31,6 @@ function yes() {
       I can’t wait to be with you foreverrr.<br><br>
       I miss you so much baby.
     </h1>
-
-    <p id="countdown" style="
-      color:white;
-      text-align:center;
-      font-size:1.2rem;
-      margin-top:10px;
-      line-height:1.5;
-    ">
-      💘 Countdown to Valentine’s Day 💘
-    </p>
 
     <div style="
       position:fixed;

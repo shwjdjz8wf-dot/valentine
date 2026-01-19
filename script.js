@@ -306,3 +306,7 @@ function startCountdown() {
        ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
   }, 1000);
 }
+
+
+updateCountdown();
+setInterval(updateCountdown, 1000);

@@ -16,26 +16,38 @@ function yes() {
       I miss you so much baby.
     </h1>
 
-  <div style="
-  position:fixed;
-  bottom:30px;
-  width:100%;
-  display:flex;
-  justify-content:center;
-">
-  <button onclick="showPasswordPage()" style="
-    padding:14px 22px;
-    font-size:1.2rem;
-    border:none;
-    border-radius:12px;
-    background:white;
-    color:hotpink;
-    cursor:pointer;
-  ">
-    Reveal Secret 💌
-  </button>
-</div>
+    <p id="countdown" style="
+      color:white;
+      text-align:center;
+      font-size:1.2rem;
+      margin-top:10px;
+      line-height:1.5;
+    ">
+      💘 Countdown to Valentine’s Day 💘
+    </p>
+
+    <div style="
+      position:fixed;
+      bottom:30px;
+      width:100%;
+      display:flex;
+      justify-content:center;
+    ">
+      <button onclick="showPasswordPage()" style="
+        padding:14px 22px;
+        font-size:1.2rem;
+        border:none;
+        border-radius:12px;
+        background:white;
+        color:hotpink;
+        cursor:pointer;
+      ">
+        Reveal Secret 💌
+      </button>
+    </div>
   `;
+
+  startCountdown();
 }
 
 function showPasswordPage() {
@@ -255,4 +267,35 @@ function showPopupreally() {
   window.closePopup = function () {
     document.body.removeChild(overlay);
   };
+}
+
+
+
+function startCountdown() {
+  // CHANGE YEAR IF NEEDED
+  const valentinesDate = new Date("February 14, 2026 00:00:00").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = valentinesDate - now;
+
+    if (distance <= 0) {
+      document.getElementById("countdown").innerHTML =
+        "❤️ It’s Valentine’s Day ❤️";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      `💘 Countdown to Valentine’s Day 💘<br>
+       ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+  }, 1000);
 }

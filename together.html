@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Us 💕</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 90%;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    #togetherTime {
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 16px;
+      background: white;
+      color: hotpink;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Us 💕</h1>
+
+    <p>We’ve been together for</p>
+    <div id="togetherTime">Loading...</div>
+
+    <button onclick="location.href='home.html'">
+      Back Home 🏠
+    </button>
+  </div>
+
+  <script>
+    // 🔴 CHANGE THIS TO YOUR REAL DATE
+    const togetherSince = new Date("September 7, 2025 23:00:00").getTime();
+
+    function updateTogether() {
+      const now = new Date().getTime();
+      const diff = now - togetherSince;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("togetherTime").innerHTML =
+        `${days} days<br>${hours} hours ${minutes} minutes ${seconds} seconds 💗`;
+    }
+
+    updateTogether();
+    setInterval(updateTogether, 1000);
+  </script>
+
+</body>
+</html>

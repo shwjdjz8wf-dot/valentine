@@ -29,15 +29,18 @@
       letter-spacing: 2px;
     }
 
-    #togetherTime {
+    #togetherTime,
+    #monthiversary,
+    #anniversary {
       font-size: clamp(1.5rem, 5vw, 2.2rem);
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     p {
       font-size: 1.2rem;
       opacity: 0.95;
+      margin-bottom: 8px;
     }
 
     button {
@@ -64,40 +67,78 @@
     <p>We’ve been together for</p>
     <div id="togetherTime">Loading...</div>
 
+    <p>Next month-iversary in</p>
+    <div id="monthiversary">Loading...</div>
+
+    <p>Next anniversary in</p>
+    <div id="anniversary">Loading...</div>
+
     <button onclick="location.href='home.html'">
       Back Home 🏠
     </button>
   </div>
 
   <script>
-  const togetherSince = new Date("September 7, 2025 23:00:00").getTime();
+    // ❤️ Relationship start date (ONLY date you ever set)
+    const togetherSince = new Date("September 7, 2025 23:00:00");
 
-  function updateTogether() {
-    const now = Date.now();
-    const diff = now - togetherSince;
+    function updateAll() {
+      const now = new Date();
 
-    if (diff < 0) {
-      document.getElementById("togetherTime").textContent =
-        "Almost there 💕";
-      return;
+      // ---------- TIME TOGETHER ----------
+      const diff = now - togetherSince;
+
+      if (diff < 0) {
+        document.getElementById("togetherTime").textContent =
+          "Almost there 💕";
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("togetherTime").innerHTML =
+          `${days} days<br>${hours} hours ${minutes} minutes ${seconds} seconds 💗`;
+      }
+
+      // ---------- NEXT MONTH-IVERSARY ----------
+      let nextMonth = new Date(togetherSince);
+      nextMonth.setMonth(
+        togetherSince.getMonth() +
+        Math.floor((now - togetherSince) / (1000 * 60 * 60 * 24 * 30)) +
+        1
+      );
+
+      if (nextMonth <= now) {
+        nextMonth.setMonth(nextMonth.getMonth() + 1);
+      }
+
+      updateCountdown(nextMonth - now, "monthiversary", "💞");
+
+      // ---------- NEXT ANNIVERSARY ----------
+      let nextAnniversary = new Date(togetherSince);
+      nextAnniversary.setFullYear(now.getFullYear());
+
+      if (nextAnniversary <= now) {
+        nextAnniversary.setFullYear(now.getFullYear() + 1);
+      }
+
+      updateCountdown(nextAnniversary - now, "anniversary", "💍");
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+    function updateCountdown(diff, id, emoji) {
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("togetherTime").innerHTML =
-      `${days} days<br>${hours} hours ${minutes} minutes ${seconds} seconds 💗`;
-  }
+      document.getElementById(id).textContent =
+        `${days} days ${hours} hrs ${minutes} mins ${seconds} secs ${emoji}`;
+    }
 
-  // RUN IMMEDIATELY
-  updateTogether();
-
-  // UPDATE EVERY SECOND
-  setInterval(updateTogether, 1000);
-</script>
-
+    updateAll();
+    setInterval(updateAll, 1000);
+  </script>
 
 </body>
 </html>

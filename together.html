@@ -70,25 +70,34 @@
   </div>
 
   <script>
-    // 🔴 CHANGE THIS TO YOUR REAL DATE
-    const togetherSince = new Date("September 7, 2025 23:00:00").getTime();
+  const togetherSince = new Date("September 7, 2025 23:00:00").getTime();
 
-    function updateTogether() {
-      const now = new Date().getTime();
-      const diff = now - togetherSince;
+  function updateTogether() {
+    const now = Date.now();
+    const diff = now - togetherSince;
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("togetherTime").innerHTML =
-        `${days} days<br>${hours} hours ${minutes} minutes ${seconds} seconds 💗`;
+    if (diff < 0) {
+      document.getElementById("togetherTime").textContent =
+        "Almost there 💕";
+      return;
     }
 
-    updateTogether();
-    setInterval(updateTogether, 1000);
-  </script>
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("togetherTime").innerHTML =
+      `${days} days<br>${hours} hours ${minutes} minutes ${seconds} seconds 💗`;
+  }
+
+  // RUN IMMEDIATELY
+  updateTogether();
+
+  // UPDATE EVERY SECOND
+  setInterval(updateTogether, 1000);
+</script>
+
 
 </body>
 </html>
